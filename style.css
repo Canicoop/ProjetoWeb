@@ -1,0 +1,173 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#f4f4f4;
+  color:#222;
+}
+
+/* HEADER */
+
+header{
+  background:#1f2937;
+  color:white;
+  padding:20px 40px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+header h1{
+  font-size:30px;
+}
+
+.wishlist{
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* TOP BAR */
+
+.top-bar{
+  background:white;
+  padding:20px 40px;
+
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.search{
+  flex:1;
+}
+
+.search input{
+  width:100%;
+  padding:12px;
+
+  border:none;
+  border-radius:8px;
+  border:1px solid #ccc;
+
+  font-size:16px;
+}
+
+.filters select{
+  padding:12px;
+
+  border-radius:8px;
+  border:1px solid #ccc;
+
+  background:white;
+  font-size:15px;
+}
+
+/* BOOKS */
+
+.books{
+  padding:40px;
+
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap:25px;
+}
+
+/* BOOK */
+
+.book{
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+
+  padding:20px;
+
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+
+  transition:0.3s;
+}
+
+.book:hover{
+  transform:translateY(-4px);
+}
+
+.book img{
+    width:auto;
+    height:auto;
+    object-fit:cover;
+    margin:0 auto;
+    border-radius:10px;
+}
+
+.book-info{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.book-info h3{
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.author{
+  color:#666;
+  margin-bottom:10px;
+}
+
+.genre{
+  background:#e5e7eb;
+  width:max-content;
+
+  padding:6px 12px;
+  border-radius:20px;
+
+  margin-bottom:15px;
+}
+
+.price{
+  font-size:22px;
+  font-weight:bold;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:700px){
+
+  .book{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+
+  .book img{
+    width:100%;
+    max-width:250px;
+    height:auto;
+  }
+
+  .book-info{
+    align-items:center;
+  }
+
+  header{
+    padding:20px;
+  }
+
+  .top-bar{
+    padding:20px;
+  }
+
+  .books{
+    padding:20px;
+  }
+
+}
