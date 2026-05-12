@@ -4,13 +4,20 @@ const booksContainer = document.querySelector(".books");
 
 async function fetchBooks() {
   let response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=${API_KEY}`);
+
   try {
     const data = await response.json();
-    const books = data.results.lists[0].books;
 
-    books.forEach(book => {
-        createBook(book);
-    });
+    const listBooks = data.results.lists;
+
+    for (const list of listBooks) {
+      const books = list.books;
+  
+      books.forEach(book => {
+          createBook(book);
+      });
+      
+    }
 
   } catch (error) {
     console.log("Error fetching books:", error);
