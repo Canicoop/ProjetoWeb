@@ -1,7 +1,5 @@
 # Livraria Central
 
-> Projeto da unidade curricular de **Programação Web** — Licenciatura em Engenharia Informática (LEI)
-> Período: 4 de maio – 29 de maio de 2026
 
 Aplicação web de uma livraria online onde o utilizador pode pesquisar, filtrar e ordenar livros, ver detalhes, adicionar a uma wishlist e (mais-valia) gerir uma coleção de livros através de uma Web API.
 
