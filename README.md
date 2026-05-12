@@ -24,3 +24,13 @@ https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=yourkey
 - Links para compra
 
 ---
+
+## 3. Tecnologias
+
+- **HTML5** — estrutura semântica
+- **CSS3** — layout (Flexbox/Grid), responsividade
+- **JavaScript (ES6+)** — lógica, manipulação do DOM, `fetch`
+- **GitHub Pages** — alojamento
+- **Web APIs externas** — *[ex.: NewYorkTimes API]*
+
+---
