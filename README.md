@@ -3,7 +3,8 @@
 
 Aplicação web de uma livraria online onde o utilizador pode pesquisar, filtrar e ordenar livros, ver detalhes, adicionar a uma wishlist e (mais-valia) gerir uma coleção de livros através de uma Web API.
 
-https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=yourkey
+**Site online (GitHub Pages):** https://canicoop.github.io/ProjetoWeb/
+
 ---
 
 ## 1. Autor(es)
