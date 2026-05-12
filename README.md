@@ -15,3 +15,12 @@ https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=yourkey
 
 ---
 
+## 3. Funcionalidades
+
+### 3.1. Versão atual
+- Layout base com cabeçalho, barra de pesquisa, filtros e grelha de livros
+- Filtro por género (Fantasia, Romance, Mistério, Ficção)
+- Estilos próprios em CSS (sem frameworks)
+- Links para compra
+
+---
