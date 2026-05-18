@@ -31,7 +31,6 @@ function createBook(book, slug, genreName) {
             <h3>${book.title}</h3>
             <p class="author">by ${book.author}</p>
             <span class="genre">${genreName}</span>
-            <p class="description">${book.description}</p>
         </div>
     `;
     booksContainer.appendChild(bookElement);
