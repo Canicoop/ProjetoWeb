@@ -25,11 +25,25 @@ async function fetchBooks() {
 
       list.books.forEach(book => {
 
-        allBooks.push({
-          ...book,
-          genreSlug: list.list_name_encoded,
-          genreName: list.list_name
-        });
+        // Ver se o livro já existe no array (pelo título)
+        const existing = allBooks.find(b => b.title === book.title);
+
+        if (existing) {
+
+          // Já existe → só juntar o novo género ao texto
+          existing.genreName += " / " + list.list_name;
+          existing.genreSlug += "," + list.list_name_encoded;
+
+        } else {
+
+          // Não existe → adicionar normalmente
+          allBooks.push({
+            ...book,
+            genreSlug: list.list_name_encoded,
+            genreName: list.list_name
+          });
+
+        }
 
       });
 
@@ -75,7 +89,9 @@ function displayBooks(books) {
       <div class="book-info">
           <h3>${book.title}</h3>
           <p class="author">by ${book.author}</p>
-          <span class="genre">${book.genreName}</span>
+          <div class="genres">
+            ${book.genreName.split(" / ").map(g => `<span class="genre">${g}</span>`).join("")}
+          </div>
       </div>
     `;
 
@@ -111,7 +127,7 @@ function filterBooks() {
 
     const matchesGenre =
       selectedGenre === "all" ||
-      book.genreSlug === selectedGenre;
+      book.genreSlug.includes(selectedGenre);
 
     const matchesSearch =
       book.title.toLowerCase().includes(searchTerm) ||

@@ -133,6 +133,17 @@ header h1{
   margin-bottom:15px;
 }
 
+.genres{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-bottom:15px;
+}
+
+.genre{
+  margin-bottom:0;
+}
+
 .price{
   font-size:22px;
   font-weight:bold;
