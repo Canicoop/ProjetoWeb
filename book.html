@@ -15,24 +15,32 @@
     <div class="wishlist">♡</div>
   </header>
 
-  <section class="top-bar">
+  <section class="book-detail">
 
-    <div class="search">
-      <input type="text" placeholder="Pesquisar livros...">
-    </div>
+    <a href="index.html" class="back-link">← Voltar</a>
 
-    <div class="filters">
-      <select id="genreFilter">
-        <option value="all">Todos os géneros</option>
-      </select>
+    <div class="detail-content">
+
+      <img id="bookImage" src="" alt="">
+
+      <div class="detail-info">
+        <h2 id="bookTitle"></h2>
+        <p class="author" id="bookAuthor"></p>
+
+        <div class="genres" id="bookGenres"></div>
+
+        <p class="description" id="bookDescription"></p>
+
+        <p class="publisher"><strong>Editora:</strong> <span id="bookPublisher"></span></p>
+        <p class="isbn"><strong>ISBN:</strong> <span id="bookIsbn"></span></p>
+        
+        <div class="buy-links" id="buyLinks"></div>
+      </div>
+
     </div>
 
   </section>
 
-  <section class="books">
-    
-  </section>
-
-  <script src="script.js"></script>
+  <script src="book.js"></script>
 </body>
 </html>
