@@ -31,7 +31,7 @@ async function fetchBooks() {
         if (existing) {
 
           // Já existe → só juntar o novo género ao texto
-          existing.genreName += " / " + list.list_name;
+          existing.genreName += "|" + list.list_name;
           existing.genreSlug += "," + list.list_name_encoded;
 
         } else {
@@ -84,15 +84,17 @@ function displayBooks(books) {
     bookElement.classList.add("book");
 
     bookElement.innerHTML = `
-      <img src="${book.book_image}" alt="${book.title}">
+      <a href="book.html?isbn=${book.primary_isbn13}">
+        <img src="${book.book_image}" alt="${book.title}">
 
-      <div class="book-info">
-          <h3>${book.title}</h3>
-          <p class="author">by ${book.author}</p>
-          <div class="genres">
-            ${book.genreName.split(" / ").map(g => `<span class="genre">${g}</span>`).join("")}
-          </div>
-      </div>
+        <div class="book-info">
+            <h3>${book.title}</h3>
+            <p class="author">by ${book.author}</p>
+            <div class="genres">
+              ${book.genreName.split("|").map(g => `<span class="genre">${g}</span>`).join("")}
+            </div>
+        </div>
+      </a>
     `;
 
     booksContainer.appendChild(bookElement);
