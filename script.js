@@ -7,6 +7,27 @@ const searchInput = document.querySelector(".search input");
 let allBooks = [];
 let debounceTimer;
 
+let currentUser = null;
+let userWishlist = [];
+
+// Verificar se está autenticado antes de fazer tudo
+protegerPagina(async (user) => {
+
+  currentUser = user;
+  mostrarUtilizador(user);
+
+  // Buscar wishlist do utilizador no Firestore
+  const userDoc = await db.collection("users").doc(user.uid).get();
+
+  if (userDoc.exists) {
+    userWishlist = userDoc.data().wishlist || [];
+  }
+
+  // Buscar livros
+  fetchBooks();
+
+});
+
 // Buscar livros
 async function fetchBooks() {
 
@@ -83,7 +104,12 @@ function displayBooks(books) {
 
     bookElement.classList.add("book");
 
+    const naWishlist = userWishlist.includes(book.primary_isbn13);
+
     bookElement.innerHTML = `
+      <button class="wishlist-btn ${naWishlist ? "active" : ""}" data-isbn="${book.primary_isbn13}">
+        ${naWishlist ? "♥" : "♡"}
+      </button>
       <a href="book.html?isbn=${book.primary_isbn13}">
         <img src="${book.book_image}" alt="${book.title}">
 
@@ -96,6 +122,38 @@ function displayBooks(books) {
         </div>
       </a>
     `;
+
+    // Botão da wishlist
+    const wishBtn = bookElement.querySelector(".wishlist-btn");
+
+    wishBtn.addEventListener("click", async (e) => {
+
+      e.preventDefault();
+
+      const isbn = wishBtn.dataset.isbn;
+
+      if (userWishlist.includes(isbn)) {
+
+        // Remover da wishlist
+        userWishlist = userWishlist.filter(i => i !== isbn);
+        wishBtn.classList.remove("active");
+        wishBtn.textContent = "♡";
+
+      } else {
+
+        // Adicionar à wishlist
+        userWishlist.push(isbn);
+        wishBtn.classList.add("active");
+        wishBtn.textContent = "♥";
+
+      }
+
+      // Guardar no Firestore (set com merge → cria se não existir)
+      await db.collection("users").doc(currentUser.uid).set({
+        wishlist: userWishlist
+      }, { merge: true });
+
+    });
 
     booksContainer.appendChild(bookElement);
 
@@ -158,6 +216,3 @@ searchInput.addEventListener("input", () => {
   }, 300);
 
 });
-
-// Inicializar
-fetchBooks();

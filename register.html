@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registo | Livraria Central</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Livraria Central</h1>
+  </header>
+
+  <section class="auth-section">
+
+    <form class="auth-form" id="registerForm">
+
+      <h2>Criar Conta</h2>
+
+      <label>
+        Nome
+        <input type="text" id="name" required>
+      </label>
+
+      <label>
+        Email
+        <input type="email" id="email" required>
+      </label>
+
+      <label>
+        Password (mínimo 6 caracteres)
+        <input type="password" id="password" minlength="6" required>
+      </label>
+
+      <label>
+        Confirmar Password
+        <input type="password" id="confirmPassword" minlength="6" required>
+      </label>
+
+      <p class="auth-error" id="authError"></p>
+
+      <button type="submit">Criar Conta</button>
+
+      <p class="auth-link">
+        Já tens conta? <a href="login.html">Entra aqui</a>
+      </p>
+
+    </form>
+
+  </section>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <script src="firebase-config.js"></script>
+  <script src="register.js"></script>
+</body>
+</html>

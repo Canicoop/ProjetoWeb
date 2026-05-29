@@ -1,5 +1,13 @@
 const API_KEY = "t3ZaWUnLbSMvKlwPHfsd4HAXraekBZq4KPersGwaTioFHC94";
 
+// Verificar se está autenticado
+protegerPagina(user => {
+
+  mostrarUtilizador(user);
+  fetchBook();
+
+});
+
 // Buscar livro
 async function fetchBook() {
 
@@ -95,6 +103,3 @@ function displayBook(book, genres) {
   });
 
 }
-
-// Inicializar
-fetchBook();

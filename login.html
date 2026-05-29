@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Livraria Central</title>
+  <title>Login | Livraria Central</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,24 +12,33 @@
 
   <header>
     <h1>Livraria Central</h1>
-    <div class="wishlist">♡</div>
   </header>
 
-  <section class="top-bar">
+  <section class="auth-section">
 
-    <div class="search">
-      <input type="text" placeholder="Pesquisar livros...">
-    </div>
+    <form class="auth-form" id="loginForm">
 
-    <div class="filters">
-      <select id="genreFilter">
-        <option value="all">Todos os géneros</option>
-      </select>
-    </div>
+      <h2>Entrar</h2>
 
-  </section>
+      <label>
+        Email
+        <input type="email" id="email" required>
+      </label>
 
-  <section class="books">
+      <label>
+        Password
+        <input type="password" id="password" required>
+      </label>
+
+      <p class="auth-error" id="authError"></p>
+
+      <button type="submit">Entrar</button>
+
+      <p class="auth-link">
+        Ainda não tens conta? <a href="register.html">Regista-te</a>
+      </p>
+
+    </form>
 
   </section>
 
@@ -39,7 +48,6 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 
   <script src="firebase-config.js"></script>
-  <script src="auth.js"></script>
-  <script src="script.js"></script>
+  <script src="login.js"></script>
 </body>
 </html>

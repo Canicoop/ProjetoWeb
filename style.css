@@ -239,6 +239,158 @@ header h1{
   background:#374151;
 }
 
+/* LOGIN / REGISTO */
+
+.auth-section{
+  display:flex;
+  justify-content:center;
+  padding:40px 20px;
+}
+
+.auth-form{
+  background:white;
+  border-radius:12px;
+  padding:30px;
+  width:100%;
+  max-width:400px;
+
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+.auth-form h2{
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.auth-form label{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size:14px;
+  color:#444;
+}
+
+.auth-form input{
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:15px;
+}
+
+.auth-form button{
+  background:#1f2937;
+  color:white;
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.auth-form button:hover{
+  background:#374151;
+}
+
+.auth-error{
+  color:#b91c1c;
+  font-size:14px;
+  text-align:center;
+  min-height:18px;
+}
+
+.auth-link{
+  text-align:center;
+  font-size:14px;
+}
+
+.auth-link a{
+  color:#1f2937;
+  font-weight:bold;
+}
+
+/* HEADER UTILIZADOR */
+
+.user-box{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.user-name{
+  font-size:15px;
+}
+
+.logout-btn{
+  background:white;
+  color:#1f2937;
+  border:none;
+  padding:8px 14px;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.logout-btn:hover{
+  background:#e5e7eb;
+}
+
+.wishlist-link{
+  color:white;
+  text-decoration:none;
+  font-size:15px;
+  padding:8px 14px;
+  border-radius:8px;
+  transition:0.3s;
+}
+
+.wishlist-link:hover{
+  background:#374151;
+}
+
+.page-title{
+  font-size:22px;
+  color:#1f2937;
+}
+
+/* WISHLIST BUTTON NO LIVRO */
+
+.book{
+  position:relative;
+}
+
+.wishlist-btn{
+  position:absolute;
+  top:15px;
+  right:15px;
+
+  background:white;
+  border:none;
+  font-size:24px;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  cursor:pointer;
+
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  transition:0.2s;
+  z-index:2;
+}
+
+.wishlist-btn:hover{
+  transform:scale(1.1);
+}
+
+.wishlist-btn.active{
+  color:#e11d48;
+}
+
 /* RESPONSIVO */
 
 @media(max-width:700px){
